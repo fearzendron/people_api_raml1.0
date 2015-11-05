@@ -1,7 +1,8 @@
 #%RAML 1.0
 title: People
 version: v1
-baseUri: http://api.people.com
+baseUri: http://api.people.com/{version}/
+protocols: [HTTP, HTTPS]
 
 documentation:
   - title: Home
@@ -11,38 +12,24 @@ documentation:
 
 mediaType: application/json
 
-
 types:
-  People:
+  Person:
     type: object
     properties:
       id: number
       firstName: string
       lastName: string
+    example: !include examples/person.json
+  People:
+    type: Person[]
+    minItems: 1
+    uniqueItems: true
+    example: !include examples/people.json
+
 /people:
   get:
     responses:
       200:
         body:
           application/json:
-            example: |
-              {
-                "people": [
-                  {
-                    "id":123232,
-                    "firstName":"Fernando",
-                    "lastName":"Zendron"
-                  },
-                  {
-                    "id":3874759,
-                    "firstName":"Enzo",
-                    "lastName":"Zendron"
-                  },
-                  {
-                    "id":290847,
-                    "firstName":"Maria",
-                    "lastName":"Valdeene"
-                  }
-                ]
-              }
-            displayName: People
+            type: People

@@ -1,0 +1,19 @@
+{
+  "people": [
+    {
+      "id":123232,
+      "firstName":"Fernando",
+      "lastName":"Zendron"
+    },
+    {
+      "id":3874759,
+      "firstName":"Enzo",
+      "lastName":"Zendron"
+    },
+    {
+      "id":290847,
+      "firstName":"Maria",
+      "lastName":"Valdeene"
+    }
+  ]
+}
